@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Script</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: lime;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      background: lime;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: rgb(0, 200, 0);
+    }
+
+    textarea {
+      height: 200px;
+      resize: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Gerador de Script GG</h1>
+
+  <label>Nome do Script:</label>
+  <input type="text" id="nomeScript" placeholder="Ex: Script do Isaac">
+
+  <label>Texto que vai aparecer no início:</label>
+  <input type="text" id="msgInicio" placeholder="Ex: Bem-vindo ao script!">
+
+  <button onclick="gerarScript()">GERAR SCRIPT</button>
+
+  <h2>Resultado:</h2>
+  <textarea id="resultado" readonly></textarea>
+
+  <button onclick="copiar()">COPIAR SCRIPT</button>
+
+  <script>
+    function gerarScript() {
+      let nome = document.getElementById("nomeScript").value;
+      let msg = document.getElementById("msgInicio").value;
+
+      let scriptFinal = `-- ${nome}
+gg.toast("${msg}")
+print("${msg}")
+
+-- Script gerado automaticamente
+`;
+
+      document.getElementById("resultado").value = scriptFinal;
+    }
+
+    function copiar() {
+      let texto = document.getElementById("resultado");
+      texto.select();
+      document.execCommand("copy");
+      alert("Script copiado!");
+    }
+  </script>
+
+</body>
+  </html>
