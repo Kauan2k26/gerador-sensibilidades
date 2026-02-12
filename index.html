@@ -12,9 +12,36 @@ body {
     color: white;
     text-align: center;
     padding: 20px;
+    overflow-x: hidden;
+}
+
+/* 🌟 FUNDO COM TEXTO "KAUAN MODS" ANIMADO */
+.fundo-texto {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 200px; /* maior agora */
+    color: red;
+    opacity: 0.05;   /* mais suave, quase transparente */
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 0;
+    animation: girar 60s linear infinite; /* gira lentamente */
+}
+
+@keyframes girar {
+    0% {
+        transform: translate(-50%, -50%) rotate(-30deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(330deg); /* gira completo */
+    }
 }
 
 .container {
+    position: relative; /* para ficar acima do fundo */
+    z-index: 1;
     max-width: 420px;
     margin: auto;
     background: #1e1e1e;
@@ -91,6 +118,9 @@ button:hover {
 </head>
 
 <body>
+
+<!-- TEXTO DE FUNDO ANIMADO -->
+<div class="fundo-texto">KAUAN MODS</div>
 
 <div class="container">
     <h1>🔥 FF Sensibilidade PRO</h1>
