@@ -61,13 +61,28 @@ button:hover{
     border-radius:15px;
     text-align:left;
 }
+
+/* TEXTO CRIADOR */
+.criador{
+    margin-top:20px;
+    font-weight:bold;
+    font-size:16px;
+    color:#ff0000;
+    animation:piscando 1s infinite;
+}
+
+@keyframes piscando{
+    0%{opacity:1;}
+    50%{opacity:0.2;}
+    100%{opacity:1;}
+}
 </style>
 </head>
 
 <body>
 
 <div class="container">
-<h1>🔥 Gerador de Sensibilidade</h1>
+<h1>🔥 Gerador Sensibilidades</h1>
 
 <label>Marca do Celular</label>
 <select id="marca">
@@ -84,6 +99,10 @@ button:hover{
 <button onclick="gerarSensi()">GERAR SENSIBILIDADE</button>
 
 <div class="resultado" id="resultado"></div>
+
+<div class="criador">
+    Criador: Kauan Mods
+</div>
 
 </div>
 
